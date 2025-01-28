@@ -3,3 +3,31 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* utility */
+:root {
+    --sptfy-bg: #000000;
+    --sptfy-light-grey: #a3a3a3;
+    --sptfy-important: #adfe2f;
+    --sptfy-footer: #282828;
+    --sptfy-grey: #7b7e82;
+
+}
+
+#main-container {
+    background-color: var(--sptfy-bg);
+}
+
+/* start nav */
+
+#side-bar {
+    padding: 10px;
+
+    .logo-xs {
+        width: 30px;
+    }
+
+    .logo-xl {
+        display: none;
+    }
+}
