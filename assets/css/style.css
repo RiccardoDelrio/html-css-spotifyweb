@@ -6,7 +6,8 @@
 
 /* utility */
 :root {
-    --sptfy-bg: #000000;
+    --sptfy-bg-nav: #000000;
+    --sptft-bg-main: #141922;
     --sptfy-light-grey: #a3a3a3;
     --sptfy-important: #adfe2f;
     --sptfy-footer: #282828;
@@ -15,13 +16,19 @@
 }
 
 #main-container {
-    background-color: var(--sptfy-bg);
+
+    display: flex;
+
 }
 
 /* start nav */
 
 #side-bar {
+    background-color: var(--sptfy-bg-nav);
     padding: 10px;
+    height: 100vh;
+    color: white;
+
 
     .logo-xs {
         width: 30px;
@@ -29,5 +36,66 @@
 
     .logo-xl {
         display: none;
+    }
+
+    .menu {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+
+
+
+        a {
+
+            color: white;
+            text-decoration: none;
+
+
+            img {
+                max-width: 30px;
+            }
+
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+.nav-bottom {}
+
+
+/* START MEDIA QUERY */
+
+@media screen and (min-width:639px) {
+    #side-bar {
+        .menu {
+            display: flex;
+
+
+            a {
+                display: flex;
+                align-items: center;
+                column-gap: 5px;
+
+                span {
+                    display: inline-block;
+                    text-align: center;
+                }
+
+            }
+
+        }
+
+        .logo-xs {
+            display: none;
+        }
+
+        .logo-xl {
+            display: inline-block;
+            width: 135px;
+        }
+
     }
 }
