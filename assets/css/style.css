@@ -28,6 +28,11 @@
     padding: 10px;
     height: 100vh;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
 
 
     .logo-xs {
@@ -61,15 +66,37 @@
             }
         }
     }
+
+    .install {
+        a {
+            color: white;
+            text-decoration: none;
+
+            img {
+                width: 13px;
+            }
+
+            span {
+                display: none;
+            }
+        }
+    }
 }
 
-.nav-bottom {}
+
 
 
 /* START MEDIA QUERY */
 
 @media screen and (min-width:639px) {
     #side-bar {
+
+
+        .nav-up,
+        .nav-bottom {
+            width: 230px;
+        }
+
         .menu {
             display: flex;
 
@@ -82,6 +109,7 @@
                 span {
                     display: inline-block;
                     text-align: center;
+
                 }
 
             }
@@ -95,6 +123,7 @@
         .logo-xl {
             display: inline-block;
             width: 135px;
+
         }
 
     }
