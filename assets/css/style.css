@@ -85,22 +85,13 @@ a:hover {
         flex-direction: column;
         justify-content: space-between;
         overflow-y: auto;
-
-
     }
-
 
     a {
         color: var(--sptfy-grey);
         font-weight: 500;
         text-decoration: none;
-
     }
-
-
-
-
-
 
     .logo-xs {
         width: 30px;
@@ -110,13 +101,11 @@ a:hover {
         display: none;
     }
 
-
     .menu {
         margin-top: 20px;
         display: flex;
         flex-direction: column;
-        row-container-gap: 15px;
-
+        row-gap: 15px;
 
         a {
             img {
@@ -152,12 +141,7 @@ a:hover {
 
     .playlist {
         display: none;
-
-
-
     }
-
-
 
     .nav-bottom {
         display: flex;
@@ -167,6 +151,22 @@ a:hover {
 
         hr {
             display: none;
+        }
+
+        .download {
+            display: flex;
+            align-items: center;
+            color: var(--sptfy-light-grey);
+
+            .fa-arrow-circle-o-down {
+
+                font-size: 20px;
+            }
+
+            &:hover {
+                color: white;
+
+            }
         }
 
         .profile {
@@ -229,7 +229,7 @@ a:hover {
         overflow-y: auto;
 
         .filter {
-            margin-top: 80px;
+
             display: flex;
             flex-wrap: wrap;
             row-gap: 30px;
@@ -237,8 +237,14 @@ a:hover {
             padding: 30px;
             justify-content: center;
             text-transform: uppercase;
-            font-size: 10px;
+            font-size: 15px;
 
+            .under {
+                margin: auto;
+                width: 40px;
+                height: 2px;
+                background-color: var(--sptfy-important);
+            }
         }
     }
 
@@ -381,6 +387,17 @@ h5 {
             display: flex;
             flex-direction: column;
             gap: 5px;
+
+            i:hover {
+                font-size: 18px;
+
+
+            }
+        }
+
+        .icon {
+            width: 18px;
+            height: 18px;
         }
     }
 
@@ -449,7 +466,8 @@ h5 {
         }
     }
 
-    i:hover {
+    .footer_middle i:hover,
+    .footer-right i:hover {
         font-size: 25px;
 
         &.fa-play-circle-o {
@@ -459,6 +477,14 @@ h5 {
 
     .icon {
         width: 25px;
+        height: 25px;
+        text-align: center;
+    }
+
+    .icon-play {
+        width: 43px;
+        height: 43px;
+        text-align: center;
     }
 }
 
@@ -643,22 +669,14 @@ h5 {
                     display: flex;
                     column-gap: 10px;
 
-
                     span {
-
-
                         display: inline-block;
-                        color: var(--sptfy-grey);
+
                     }
                 }
             }
         }
-
-
-
     }
-
-
 }
 
 @media screen and (min-width: 878px) {
