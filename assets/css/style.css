@@ -203,7 +203,8 @@ a:hover {
 
         align-items: center;
         justify-content: flex-end;
-        position: fixed;
+        position: sticky;
+        top: 0;
         background-color: #080b12c4;
         height: 80px;
         width: 100%;
@@ -238,59 +239,56 @@ a:hover {
             text-transform: uppercase;
             font-size: 10px;
 
-            & :first-child:hover {
-                border-bottom: 1px solid var(--sptfy-important);
-
-            }
-        }
-
-
-        a {
-            text-decoration: none;
-            color: var(--sptfy-light-grey)
-        }
-
-        a:hover {
-            color: white;
         }
     }
 
 
+    a {
+        text-decoration: none;
+        color: var(--sptfy-light-grey)
+    }
 
-    .row-container {
-        h3 {
-            color: white;
-            font-weight: bold;
-            font-size: 24px;
-        }
-
-        h5 {
-            color: var(--sptfy-grey);
-            font-size: 12px;
-
-        }
-
-        .recently,
-        .daily,
-        .popular {
-
-            display: flex;
-            flex-wrap: wrap;
-            column-gap: 10px;
+    a:hover {
+        color: white;
+    }
+}
 
 
 
-
-
-        }
+.row-container {
+    h3 {
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
     }
 
     h5 {
-        display: none;
+        color: var(--sptfy-grey);
+        font-size: 12px;
 
     }
 
+    .recently,
+    .daily,
+    .popular {
+
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 10px;
+
+
+
+
+
+    }
 }
+
+h5 {
+    display: none;
+
+}
+
+
 
 
 
@@ -307,7 +305,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     width: calc((100% / 2) - 10px);
-    row-container-gap: 10px;
+    row-gap: 10px;
 
     img {
         width: 100%;
@@ -356,12 +354,8 @@ a:hover {
 
     .footer_left {
         flex: 1;
-
         display: flex;
         align-items: center;
-
-
-
 
         .playback {
             padding: 0 20px;
@@ -392,19 +386,27 @@ a:hover {
 
     .footer_middle {
         flex: 2;
-
         margin: 0 15px;
 
-        .player {
+        i {
+            font-weight: 300;
+            font-size: 20px;
+        }
 
+        .fa-play-circle-o {
+            font-size: 40px;
+        }
+
+
+
+        .player {
+            padding: 5px 0;
+            height: 50px;
             display: flex;
-            column-gap: 15px;
+            column-gap: 18px;
             color: white;
-            margin-bottom: 10px;
             justify-content: center;
             align-items: center;
-
-
         }
 
         .time {
@@ -413,8 +415,6 @@ a:hover {
             column-gap: 15px;
             align-items: center;
             justify-content: center;
-
-
         }
 
         .time-bar {
@@ -423,25 +423,51 @@ a:hover {
             max-width: 250px;
             height: 4px;
             background-color: var(--sptfy-grey);
-            border: 1 px solid;
             border-radius: 3px;
 
             .progress-bar {
                 width: 30%;
                 background-color: var(--sptfy-light-grey);
-                border: 1px solid;
                 border-radius: 3px;
-            }
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
 
+                &:hover {
+                    background-color: var(--sptfy-important);
+
+                    .point {
+                        display: block;
+                    }
+                }
+            }
         }
 
         .spend-time,
         .total-time {
             font-size: 10px;
         }
-
     }
 
+    i:hover {
+        font-size: 25px;
+
+        &.fa-play-circle-o {
+            font-size: 42px;
+        }
+    }
+
+    .icon {
+        width: 25px;
+    }
+}
+
+.point {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 100%;
+    display: none;
 }
 
 .footer-right {
@@ -449,7 +475,7 @@ a:hover {
     flex: 1;
     justify-content: flex-end;
     color: white;
-    column-gap: 10px;
+    column-gap: 15px;
     margin-right: 10px;
     align-items: center;
 
@@ -458,26 +484,42 @@ a:hover {
         width: 60%;
         background-color: var(--sptfy-grey);
         height: 4px;
-        border: 1 px solid;
+        border: 2 px solid;
         border-radius: 3px;
 
-        .volume {
+        .progress-bar {
             width: 30%;
             background-color: var(--sptfy-light-grey);
-            border: 2px solid;
             border-radius: 3px;
-        }
+            display: flex;
+            height: 4px;
+            align-items: center;
+            justify-content: flex-end;
 
+            &:hover {
+                background-color: var(--sptfy-important);
+
+                .point {
+                    display: block;
+                }
+            }
+        }
 
     }
 
+    .volume:hover {
+        background-color: var(--sptfy-important);
+
+        .point {
+            display: block;
+        }
+    }
+
+    .icon {
+        width: 26px;
+        height: 26px;
+    }
 }
-
-
-
-
-
-
 
 /* START MEDIA QUERY */
 
