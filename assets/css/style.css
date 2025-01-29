@@ -66,6 +66,7 @@ a:hover {
 
 
 
+
 }
 
 
@@ -199,17 +200,21 @@ a:hover {
 
     .upgrade {
         display: flex;
-        justify-content: flex-end;
+
         align-items: center;
-        background-color: var(--sptfy-navy);
+        justify-content: flex-end;
+        position: fixed;
+        background-color: #080b12c4;
         height: 80px;
         width: 100%;
+        z-index: 20;
 
         .button {
             color: white;
             border: 1px solid white;
             border-radius: 20px;
             padding: 10px 40px;
+            z-index: 21;
 
             &:hover {
                 padding: 12px 42px;
@@ -219,69 +224,75 @@ a:hover {
 
     .container {
         background-color: var(--sptft-bg-main);
-        height: calc(100vh - 160px);
+        height: calc(100vh - 80px);
         overflow-y: auto;
 
         .filter {
-            margin-top: 20px;
+            margin-top: 80px;
             display: flex;
             flex-wrap: wrap;
-            row-container-gap: 30px;
+            row-gap: 30px;
             column-gap: 15px;
             padding: 30px;
             justify-content: center;
             text-transform: uppercase;
             font-size: 10px;
 
+            & :first-child:hover {
+                border-bottom: 1px solid var(--sptfy-important);
 
-            a {
-                text-decoration: none;
-                color: var(--sptfy-light-grey)
-            }
-
-            a:hover {
-                color: white;
             }
         }
 
 
+        a {
+            text-decoration: none;
+            color: var(--sptfy-light-grey)
+        }
 
-        .row-container {
-            h3 {
-                color: white;
-                font-weight: bold;
-                font-size: 24px;
-            }
-
-            h5 {
-                color: var(--sptfy-grey);
-                font-size: 12px;
-
-            }
-
-            .recently,
-            .daily,
-            .popular {
-
-                display: flex;
-                flex-wrap: wrap;
-                column-gap: 10px;
+        a:hover {
+            color: white;
+        }
+    }
 
 
 
-
-
-            }
+    .row-container {
+        h3 {
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
         }
 
         h5 {
-            display: none;
+            color: var(--sptfy-grey);
+            font-size: 12px;
 
         }
+
+        .recently,
+        .daily,
+        .popular {
+
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 10px;
+
+
+
+
+
+        }
+    }
+
+    h5 {
+        display: none;
 
     }
 
 }
+
+
 
 .row-container {
     padding: 20px;
@@ -332,16 +343,136 @@ a:hover {
 
 
 
-
+/* start footer */
 
 #footer {
 
-    width: 100vw;
+    width: 100%;
     height: 80px;
     background-color: var(--sptfy-footer);
-    display: block;
-    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .footer_left {
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+
+
+
+
+        .playback {
+            padding: 0 20px;
+
+            img {
+                width: 30px;
+            }
+        }
+
+        .title {
+            color: white;
+            display: flex;
+            flex-direction: column;
+
+            span {
+                color: var(--sptfy-grey)
+            }
+        }
+
+        .clickable {
+            margin-left: 13px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+
+    .footer_middle {
+        flex: 2;
+
+        margin: 0 15px;
+
+        .player {
+
+            display: flex;
+            column-gap: 15px;
+            color: white;
+            margin-bottom: 10px;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .time {
+            display: flex;
+            color: white;
+            column-gap: 15px;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        .time-bar {
+            display: flex;
+            width: 70%;
+            max-width: 250px;
+            height: 4px;
+            background-color: var(--sptfy-grey);
+            border: 1 px solid;
+            border-radius: 3px;
+
+            .progress-bar {
+                width: 30%;
+                background-color: var(--sptfy-light-grey);
+                border: 1px solid;
+                border-radius: 3px;
+            }
+
+        }
+
+        .spend-time,
+        .total-time {
+            font-size: 10px;
+        }
+
+    }
+
 }
+
+.footer-right {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    color: white;
+    column-gap: 10px;
+    margin-right: 10px;
+    align-items: center;
+
+    .volume-bar {
+        max-width: 116px;
+        width: 60%;
+        background-color: var(--sptfy-grey);
+        height: 4px;
+        border: 1 px solid;
+        border-radius: 3px;
+
+        .volume {
+            width: 30%;
+            background-color: var(--sptfy-light-grey);
+            border: 2px solid;
+            border-radius: 3px;
+        }
+
+
+    }
+
+}
+
 
 
 
@@ -515,6 +646,19 @@ a:hover {
 @media screen and (min-width: 1440px) {
     .card {
         width: calc((100% /6) - 10px);
+
+    }
+
+    #footer {
+
+        .footer_left {
+            .clickable {
+                margin-left: 20px;
+                flex-direction: row;
+                column-gap: 20px;
+            }
+        }
+
 
     }
 }
