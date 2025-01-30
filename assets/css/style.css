@@ -364,7 +364,7 @@ h5 {
         align-items: center;
 
         .playback {
-            padding: 0 20px;
+            padding: 0 10px;
 
             img {
                 width: 30px;
@@ -372,6 +372,7 @@ h5 {
         }
 
         .title {
+            font-size: 14px;
             color: white;
             display: flex;
             flex-direction: column;
@@ -382,7 +383,7 @@ h5 {
         }
 
         .clickable {
-            margin-left: 13px;
+            margin-left: 8px;
             color: white;
             display: flex;
             flex-direction: column;
@@ -437,7 +438,7 @@ h5 {
         .time-bar {
             display: flex;
             width: 70%;
-            max-width: 250px;
+            max-width: 300px;
             height: 4px;
             background-color: var(--sptfy-grey);
             border-radius: 3px;
@@ -476,9 +477,13 @@ h5 {
     }
 
     .icon {
-        width: 25px;
-        height: 25px;
+        width: 16px;
+        height: 16px;
         text-align: center;
+
+        i {
+            width: 100%;
+        }
     }
 
     .icon-play {
@@ -501,7 +506,7 @@ h5 {
     flex: 1;
     justify-content: flex-end;
     color: white;
-    column-gap: 15px;
+    column-gap: 8px;
     margin-right: 10px;
     align-items: center;
 
